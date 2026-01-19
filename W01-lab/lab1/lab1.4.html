@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="counter">0</h2>
+
+    <button id="inc-btn">+1</button>
+</body>
+<script>
+    let count = 0;
+    const counter = document.getElementById('counter')
+    const increment = document.getElementById('inc-btn')
+    function render() {
+        counter.textContent = count;
+    }
+    increment.addEventListener('click', () => {
+        count++;
+        render();
+        
+    })
+</script>
+</html>

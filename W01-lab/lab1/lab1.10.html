@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="search-input" placeholder="Search item...">
+    <ul id="item-list"></ul>
+</body>
+<script>
+    let items = ["Book", "Pen", "Pencil", "Paper", "Backpack"];
+    function render(filterText) {
+        const list = document.getElementById('item-list');
+        list.innerHTML = "";
+        const filteredItems = items.filter(item => 
+            item.toLowerCase().includes(filterText.toLowerCase())
+        );
+        filteredItems.forEach(item => {
+            const li = document.createElement('li');
+            li.innerText = item;
+            list.appendChild(li);
+        });
+    }
+    const searchInput = document.getElementById('search-input');
+    searchInput.addEventListener('input', function() {
+        render(searchInput.value);
+    });
+    render("");
+</script>
+</html>

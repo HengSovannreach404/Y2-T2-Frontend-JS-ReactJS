@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="room" style="width: 200px; height: 200px; border :1px solid black ; background-color: white; "></div>
+    <button id="switch-btn">Light Switch</button>
+    <p id="status-text">Light are ON</p>
+</body>
+<script>
+    let isLightOn = true;
+    function render() {
+    const room = document.getElementById('room');
+    const statusText = document.getElementById('status-text');
+
+    if (isLightOn) {
+        room.style.backgroundColor = "white";
+        statusText.innerText = "Lights are ON";
+    } else {
+        room.style.backgroundColor = "black";
+        statusText.innerText = "Lights are OFF";
+    }
+    }
+    const switchBtn = document.getElementById('switch-btn');
+    switchBtn.onclick = function() {
+        isLightOn = !isLightOn;
+        render();
+    };
+</script>
+</html>
