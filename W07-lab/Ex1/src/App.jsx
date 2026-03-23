@@ -10,7 +10,7 @@ function App() {
   // GAP: Initialize state by reading 'user_data' from localStorage
   const [user, setUser] = useState(() => {
     const saved = localStorage.getItem("user_data");
-    // const saved = localStorage.setItem("user_data", '{"name": "Reach", "visits": 99}');
+    localStorage.setItem("user_data", '{"name": "Reach", "visits": 99}');
     return saved ? JSON.parse(saved) : defaultUser;
   });
 
@@ -22,9 +22,6 @@ function App() {
       <p>Visits: {user.visits}</p>
     </div>
   );
-  
-          
-
 }
 
 export default App
